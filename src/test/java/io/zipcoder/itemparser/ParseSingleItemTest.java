@@ -8,6 +8,22 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class ParseSingleItemTest {
+
+    @Test
+    public void decodeTest() throws ItemParseException {
+        // given
+        ItemParser itemParser = new ItemParser();
+        String valueToParse = "naMe:Milk;price:3.23;type:Food;expiration:1/25/2016##";
+        String expected = "name+milk:price+3.23:type+food+expiration+1/25/2016,";
+        // when
+        String actual = itemParser.decode(valueToParse);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+
+
     @Test
     public void test1() throws ItemParseException {
         // given
