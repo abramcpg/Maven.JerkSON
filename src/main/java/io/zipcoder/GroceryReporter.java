@@ -11,6 +11,6 @@ public class GroceryReporter {
 
     @Override
     public String toString() {
-        return null;
+        return originalFileText;
     }
 }
